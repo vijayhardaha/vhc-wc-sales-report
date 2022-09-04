@@ -1,47 +1,46 @@
 {
-  "name": "vhc-wc-sales-report",
-  "version": "1.0.0",
-  "description": "Generates a custom product sales report during a specified time period with a filtering option.",
+	"name": "vhc-wc-sales-report",
+	"version": "1.0.0",
+	"description": "Generates a custom product sales report during a specified time period with a filtering option.",
 	"license": "GPLv2+",
-  "author": "Vijay Hardaha <https://twitter.com/vijayhardaha>",
-  "homepage": "https://github.com/vijayhardaha/vhc-wc-sales-report#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vijayhardaha/vhc-wc-sales-report.git"
-  },
-  "bugs": {
-    "url": "https://github.com/vijayhardaha/vhc-wc-sales-report/issues"
-  },
-  "browserslist": [
+	"author": "Vijay Hardaha <https://twitter.com/vijayhardaha>",
+	"homepage": "https://github.com/vijayhardaha/vhc-wc-sales-report#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vijayhardaha/vhc-wc-sales-report.git"
+	},
+	"bugs": {
+		"url": "https://github.com/vijayhardaha/vhc-wc-sales-report/issues"
+	},
+	"browserslist": [
 		"extends @wordpress/browserslist-config"
 	],
-  "scripts": {
+	"scripts": {
 		"dev": "gulp watch",
-		"prebuild": "npm run fix",
+		"prebuild": "npm run lint-fix",
+		"prebuild:css": "npm run lint-fix:css",
+		"prebuild:js": "npm run lint-fix:js",
 		"build": "gulp build",
-		"prebuild:css": "npm run fix:css",
 		"build:css": "gulp css",
-		"prebuild:js": "npm run fix:js",
 		"build:js": "gulp js",
-		"build:pot": "wp i18n make-pot . languages/vhc-wc-sales-report.pot",
-		"fix:css": "stylelint src/scss --fix",
-		"fix:js": "eslint src/js --fix",
-		"fix:php": "composer run-script fix",
-		"fix": "npm run fix:css && npm run fix:js && npm run fix:php",
 		"lint:css": "stylelint src/scss",
 		"lint:js": "eslint src/js",
 		"lint:php": "composer run-script lint",
 		"lint": "npm run lint:css && npm run lint:js && npm run lint:php",
+		"lint-fix:css": "stylelint src/scss --fix",
+		"lint-fix:js": "eslint src/js --fix",
+		"lint-fix:php": "composer run-script lint-fix",
+		"lint-fix": "npm run lint-fix:css && npm run lint-fix:js && npm run lint-fix:php",
 		"prezip": "rm -rf vhc-wc-sales-report.zip",
-		"zip": "zip -r vhc-wc-sales-report.zip ./*.php includes assets languages"
+		"zip": "zip -r vhc-wc-sales-report.zip ./*.php includes assets languages",
+		"makepot": "wp i18n make-pot . --exclude=\"node_modules,vendor\" --slug=vhc-wc-sales-report"
 	},
-  "devDependencies": {
+	"devDependencies": {
 		"@wordpress/browserslist-config": "^5.0.0",
 		"@wordpress/eslint-plugin": "^13.0.0",
-		"@wordpress/prettier-config": "^2.0.0",
 		"@wordpress/stylelint-config": "^21.0.0",
 		"autoprefixer": "^10.4.8",
-    "datatables": "^1.10.18",
+		"datatables": "^1.10.18",
 		"del": "^6.1.1",
 		"eslint": "^8.23.0",
 		"eslint-plugin-jsdoc": "^39.3.6",

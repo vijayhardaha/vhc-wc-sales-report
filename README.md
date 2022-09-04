@@ -6,14 +6,14 @@ We also have WordPress hooks supports for developers to apply thier own customiz
 
 ## Features & Benefits
 
--   One-click generate – view or download your reports with one click.
--   Sort by date range – built-in presets or custom start and end dates.
--   Order status reporting – filter by order status.
--   Product filter support – filter by all registerd product taxonomies and specific products.
--   Set display order – based on product id, quantity of sales, or gross sales.
--   Reporting fields – choose what fields to include in your report.
--   Exclude free products – exclude free products from report.
--   CSV exporter – export in CSV format.
+- One-click generate – view or download your reports with one click.
+- Sort by date range – built-in presets or custom start and end dates.
+- Order status reporting – filter by order status.
+- Product filter support – filter by all registerd product taxonomies and specific products.
+- Set display order – based on product id, quantity of sales, or gross sales.
+- Reporting fields – choose what fields to include in your report.
+- Exclude free products – exclude free products from report.
+- CSV exporter – export in CSV format.
 
 ## License
 
