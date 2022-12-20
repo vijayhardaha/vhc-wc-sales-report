@@ -1,6 +1,6 @@
 {
 	"name": "vhc-wc-sales-report",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Generates a custom product sales report during a specified time period with a filtering option.",
 	"license": "GPLv2+",
 	"author": "Vijay Hardaha <https://twitter.com/vijayhardaha>",
