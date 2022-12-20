@@ -164,6 +164,8 @@ class VHC_WC_Sales_Report_Admin {
 			'start_date'       => gmdate( 'Y-m-d', strtotime( 'today midnight' ) - MONTH_IN_SECONDS ),
 			'end_date'         => gmdate( 'Y-m-d', strtotime( 'today midnight' ) + DAY_IN_SECONDS - 1 ),
 			'order_status'     => array( 'wc-processing', 'wc-on-hold', 'wc-completed' ),
+			'billing_country'  => array(),
+			'shipping_country' => array(),
 			'include_products' => array(),
 			'exclude_products' => array(),
 			'orderby'          => 'quantity',
@@ -395,10 +397,11 @@ class VHC_WC_Sales_Report_Admin {
 	private function export_body( $dest, $return = false ) {
 		global $wpdb;
 
-		$show_all           = true;
-		$query_args         = array();
-		$product_ids        = array();
-		$settings           = $this->get_settings();
+		$show_all    = true;
+		$query_args  = array();
+		$product_ids = array();
+		$settings    = $this->get_settings();
+
 		$default_query_args = array(
 			'post_type' => 'product',
 			'nopaging'  => true,
@@ -539,6 +542,24 @@ class VHC_WC_Sales_Report_Admin {
 				'meta_value' => 0, // phpcs:ignore WordPress.DB.SlowDBQuery
 				'operator'   => '!=',
 				'type'       => 'order_item_meta',
+			);
+		}
+
+		if ( ! empty( $settings['billing_country'] ) ) {
+			$where_meta[] = array(
+				'meta_key'   => '_billing_country', // phpcs:ignore WordPress.DB.SlowDBQuery
+				'meta_value' => (array) $settings['billing_country'], // phpcs:ignore WordPress.DB.SlowDBQuery
+				'operator'   => 'IN',
+				'type'       => 'meta',
+			);
+		}
+
+		if ( ! empty( $settings['shipping_country'] ) ) {
+			$where_meta[] = array(
+				'meta_key'   => '_shipping_country', // phpcs:ignore WordPress.DB.SlowDBQuery
+				'meta_value' => (array) $settings['shipping_country'], // phpcs:ignore WordPress.DB.SlowDBQuery
+				'operator'   => 'IN',
+				'type'       => 'meta',
 			);
 		}
 
@@ -999,6 +1020,30 @@ class VHC_WC_Sales_Report_Admin {
 					)
 				);
 
+				$this->render_dropdown_field(
+					array(
+						'id'                => 'billing-country',
+						'name'              => 'billing_country[]',
+						'label'             => __( 'Billing country', 'vhc-wc-sales-report' ),
+						'desc'              => __( 'Choose the billing country from which order products to be included in report.', 'vhc-wc-sales-report' ),
+						'value'             => $this->get_setting( 'billing_country' ),
+						'options'           => WC()->countries->get_countries(),
+						'custom_attributes' => array( 'multiple' => 'multiple' ),
+					)
+				);
+
+				$this->render_dropdown_field(
+					array(
+						'id'                => 'shipping-country',
+						'name'              => 'shipping_country[]',
+						'label'             => __( 'Shipping country', 'vhc-wc-sales-report' ),
+						'desc'              => __( 'Choose the shipping country from which order products to be included in report.', 'vhc-wc-sales-report' ),
+						'value'             => $this->get_setting( 'shipping_country' ),
+						'options'           => WC()->countries->get_countries(),
+						'custom_attributes' => array( 'multiple' => 'multiple' ),
+					)
+				);
+
 				do_action( 'vhc_wc_sales_report_form_before_terms_filters', $this );
 
 				$taxonomies = $this->get_taxonomies();
@@ -1218,6 +1263,8 @@ class VHC_WC_Sales_Report_Admin {
 				'start_date'       => isset( $_POST['start_date'] ) ? sanitize_text_field( wp_unslash( $_POST['start_date'] ) ) : '',
 				'end_date'         => isset( $_POST['end_date'] ) ? sanitize_text_field( wp_unslash( $_POST['end_date'] ) ) : '',
 				'order_status'     => isset( $_POST['order_status'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['order_status'] ) ) : array(),
+				'billing_country'  => isset( $_POST['billing_country'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['billing_country'] ) ) : array(),
+				'shipping_country' => isset( $_POST['shipping_country'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['shipping_country'] ) ) : array(),
 				'include_products' => isset( $_POST['include_products'] ) ? array_map( 'absint', wp_unslash( $_POST['include_products'] ) ) : array(),
 				'exclude_products' => isset( $_POST['exclude_products'] ) ? array_map( 'absint', wp_unslash( $_POST['exclude_products'] ) ) : array(),
 				'orderby'          => isset( $_POST['orderby'] ) ? sanitize_text_field( wp_unslash( $_POST['orderby'] ) ) : '',
@@ -1239,6 +1286,7 @@ class VHC_WC_Sales_Report_Admin {
 
 			// Save settings.
 			update_option( 'vhc_wc_sales_report_settings', $settings );
+
 			// Set settings cache.
 			wp_cache_set( 'vhc_wc_sales_report_settings', $settings, 'vhc-wc-sales-report' );
 
