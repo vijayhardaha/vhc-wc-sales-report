@@ -6,8 +6,6 @@
 	<exclude-pattern>*/tests/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
-	<exclude-pattern type="relative">^newsletter-blocks/</exclude-pattern>
-	<exclude-pattern type="relative">^woocommerce/</exclude-pattern>
 
 	<!-- Only check PHP files. -->
 	<arg name="extensions" value="php"/>
@@ -39,7 +37,7 @@
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="yoyaku,woocommerce,ti-woocommerce-wishlist-premium"/>
+			<property name="text_domain" type="array" value="vhc-wc-sales-report"/>
 		</properties>
 	</rule>
 
@@ -63,13 +61,13 @@
 
 	<rule ref="WordPress.Security.ValidatedSanitizedInput">
 		<properties>
-			<property name="customSanitizingFunctions" type="array" value="wc_clean,wc_sanitize_tooltip,wc_format_decimal,wc_stock_amount"/>
+			<property name="customSanitizingFunctions" type="array" value=""/>
 		</properties>
 	</rule>
 
 	<rule ref="WordPress.Security.EscapeOutput">
 		<properties>
-			<property name="customEscapingFunctions" type="array" value="wc_help_tip,wc_sanitize_tooltip,wc_selected,wc_kses_notice,wc_esc_json"/>
+			<property name="customEscapingFunctions" type="array" value=""/>
 		</properties>
 	</rule>
 </ruleset>
