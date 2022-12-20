@@ -17,15 +17,17 @@
  * @package VHC_WC_Sales_Report
  */
 
-defined( 'ABSPATH' ) || die( 'Don\'t run this file directly!' );
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
-if ( ! function_exists( 'get_plugin_data' ) ) {
-	require_once ABSPATH . 'wp-admin/includes/plugin.php';
+// Bail if WooCommerce is not active.
+if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
+	return;
 }
 
-if ( ! defined( 'VHC_WC_SALES_REPORT_PLUGIN_FILE' ) ) {
-	define( 'VHC_WC_SALES_REPORT_PLUGIN_FILE', __FILE__ );
-}
+define( 'VHC_WC_SALES_REPORT_PLUGIN_FILE', __FILE__ );
+define( 'VHC_WC_SALES_REPORT_ABSPATH', dirname( VHC_WC_SALES_REPORT_PLUGIN_FILE ) . '/' );
+define( 'VHC_WC_SALES_REPORT_PLUGIN_BASENAME', plugin_basename( VHC_WC_SALES_REPORT_PLUGIN_FILE ) );
+define( 'VHC_WC_SALES_REPORT_VERSION', '1.0.0' );
 
 // Include the main VHC_WC_Sales_Report class.
 if ( ! class_exists( 'VHC_WC_Sales_Report', false ) ) {

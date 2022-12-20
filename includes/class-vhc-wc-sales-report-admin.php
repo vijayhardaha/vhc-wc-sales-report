@@ -2,13 +2,14 @@
 /**
  * VHC WooCommerce Sales Report admin class.
  *
- * @package VHC_WC_Sales_Report
+ * @package VHC_WC_Sales_Report\Classes
  */
 
-defined( 'ABSPATH' ) || die( 'Don\'t run this file directly!' );
+defined( 'ABSPATH' ) || exit; // Exit if accessed directly.
 
 if ( class_exists( 'VHC_WC_Sales_Report_Admin' ) ) {
-	return new VHC_WC_Sales_Report_Admin();
+	new VHC_WC_Sales_Report_Admin();
+	return;
 }
 
 /**
@@ -70,9 +71,11 @@ class VHC_WC_Sales_Report_Admin {
 	 * or if stringified $value is the same as scalar stringified $options.
 	 *
 	 * @since 1.0.0
-	 * @param   string|int       $value     Value to find within options.
-	 * @param   string|int|array $options   Options to go through when looking for value.
-	 * @return  string
+	 *
+	 * @param string|int       $value     Value to find within options.
+	 * @param string|int|array $options   Options to go through when looking for value.
+	 *
+	 * @return string
 	 */
 	private function selected( $value, $options ) {
 		if ( is_array( $options ) ) {
@@ -88,9 +91,11 @@ class VHC_WC_Sales_Report_Admin {
 	 * or if stringified $value is the same as scalar stringified $options.
 	 *
 	 * @since 1.0.0
-	 * @param   string|int       $value   Value to find within options.
-	 * @param   string|int|array $options Options to go through when looking for value.
-	 * @return  string
+	 *
+	 * @param string|int       $value   Value to find within options.
+	 * @param string|int|array $options Options to go through when looking for value.
+	 *
+	 * @return string
 	 */
 	private function checked( $value, $options ) {
 		if ( is_array( $options ) ) {
@@ -286,10 +291,11 @@ class VHC_WC_Sales_Report_Admin {
 	}
 
 	/**
-	 * Prepare options for dropdown from product ids.
+	 * Prepare options for dropdown from product IDs.
 	 *
 	 * @since 1.0.0
-	 * @param array $product_ids Product ids array.
+	 *
+	 * @param array $product_ids Product IDs array.
 	 * @return array
 	 */
 	private function prepare_product_options( $product_ids = array() ) {
@@ -311,6 +317,7 @@ class VHC_WC_Sales_Report_Admin {
 	 * Prepare options for dropdown from term ids.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param array $term_ids Term ids array.
 	 * @return array
 	 */
@@ -366,8 +373,9 @@ class VHC_WC_Sales_Report_Admin {
 	 * Outputs the report header row.
 	 *
 	 * @since 1.0.0
-	 * @param string  $dest destination path.
-	 * @param boolean $return if true then return.
+	 *
+	 * @param string  $dest     Destination path.
+	 * @param boolean $return   If true then return.
 	 */
 	private function export_header( $dest, $return = false ) {
 		$header        = array();
@@ -391,8 +399,9 @@ class VHC_WC_Sales_Report_Admin {
 	 * Generates and outputs the report body rows.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param string  $dest     Destination path.
-	 * @param boolean $return   if true then return.
+	 * @param boolean $return   If true then return.
 	 */
 	private function export_body( $dest, $return = false ) {
 		global $wpdb;
@@ -670,6 +679,7 @@ class VHC_WC_Sales_Report_Admin {
 	 * Returns sales report settings by setting key.
 	 *
 	 * @since 1.0.0
+	 *
 	 * @param string $key Settings key.
 	 * @return array
 	 */
@@ -724,7 +734,6 @@ class VHC_WC_Sales_Report_Admin {
 		</div>
 		<?php
 	}
-
 
 	/**
 	 * Render dropdown field.
@@ -1257,6 +1266,11 @@ class VHC_WC_Sales_Report_Admin {
 	 */
 	public function generate_report() {
 		if ( isset( $_POST['_wpnonce'] ) && wp_verify_nonce( sanitize_key( $_POST['_wpnonce'] ), 'vhc_wc_sales_report_nonce' ) ) {
+
+			if ( ! current_user_can( 'view_woocommerce_reports' ) ) {
+				wp_send_json_error();
+			}
+
 			// Save the static settings.
 			$settings = array(
 				'period'           => isset( $_POST['period'] ) ? sanitize_text_field( wp_unslash( $_POST['period'] ) ) : '',
@@ -1293,11 +1307,12 @@ class VHC_WC_Sales_Report_Admin {
 			if ( isset( $_POST['download'] ) && absint( wp_unslash( $_POST['download'] ) ) === 0 ) {
 				wp_send_json_success( array( 'html' => $this->preview_html() ) );
 			} else {
-				$url_args     = array(
+				$url_args = array(
 					'page'     => $this->screen_id,
 					'download' => 1,
 					'_wpnonce' => wp_create_nonce( 'vhc_wc_sales_report_download_nonce' ),
 				);
+
 				$download_url = add_query_arg( $url_args, admin_url( 'admin.php' ) );
 				wp_send_json_success( array( 'download_url' => $download_url ) );
 			}
@@ -1316,6 +1331,10 @@ class VHC_WC_Sales_Report_Admin {
 
 		if ( 'admin.php' === $pagenow && isset( $_GET['page'] ) && $_GET['page'] === $this->screen_id && isset( $_GET['download'] ) && 1 === absint( wp_unslash( $_GET['download'] ) ) ) {
 			if ( isset( $_GET['_wpnonce'] ) && wp_verify_nonce( sanitize_key( $_GET['_wpnonce'] ), 'vhc_wc_sales_report_download_nonce' ) ) {
+				if ( ! current_user_can( 'view_woocommerce_reports' ) ) {
+					return;
+				}
+
 				$settings = $this->get_settings();
 				// Check if no fields are selected or if not downloading.
 				if ( empty( $settings['fields'] ) ) {
@@ -1347,4 +1366,4 @@ class VHC_WC_Sales_Report_Admin {
 	}
 }
 
-return new VHC_WC_Sales_Report_Admin();
+new VHC_WC_Sales_Report_Admin();
