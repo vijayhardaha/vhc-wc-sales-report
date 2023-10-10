@@ -1,29 +1,29 @@
 # VHC WooCommerce Sales Report
 
-Quick Sales report for the WooCommerce products in your website that you can generate in one click with the custom time range and predefined range of your sales and with the product filters by categories, attributes, custom taxonomies & products.
+Generate quick sales reports for your WooCommerce products with ease using VHC WooCommerce Sales Report. With just one click, you can create reports tailored to your needs, selecting custom time ranges and predefined sales categories. This plugin also provides comprehensive product filtering options, allowing you to refine your reports by categories, attributes, custom taxonomies, and specific products.
 
-We also have WordPress hooks supports for developers to apply thier own customizations based on thier needs.
+Additionally, VHC WooCommerce Sales Report is developer-friendly, offering support for WordPress hooks to enable customizations tailored to individual requirements.
 
 ## Features & Benefits
 
-- One-click generate – view or download your reports with one click.
-- Sort by date range – built-in presets or custom start and end dates.
-- Order status reporting – filter by order status.
-- Product filter support – filter by all registerd product taxonomies and specific products.
-- Set display order – based on product id, quantity of sales, or gross sales.
-- Reporting fields – choose what fields to include in your report.
-- Exclude free products – exclude free products from report.
-- CSV exporter – export in CSV format.
+- **Effortless Reporting:** Generate and access your reports with a single click for immediate insights.
+- **Flexible Date Ranges:** Choose from built-in presets or specify custom start and end dates for your reports.
+- **Order Status Insights:** Filter your reports by order status for a comprehensive view of your sales.
+- **Product Filtering:** Easily filter by all registered product taxonomies and specific products for precise reporting.
+- **Custom Display Order:** Organize your reports based on product ID, quantity of sales, or gross sales for tailored insights.
+- **Customizable Fields:** Select the fields you want to include in your reports, allowing for a personalized view of your data.
+- **Exclude Free Products:** Opt to exclude free products from your reports for more accurate insights.
+- **CSV Export:** Export your reports in CSV format for convenient data management.
 
 ## License
 
-Copyright (C) 2022, Vijay Hardaha.\
-VHC WooCommerce Sales Report is distributed under the terms of the GNU GPL.
+© 2022, Vijay Hardaha.\
+VHC WooCommerce Sales Report is distributed under the terms of the GNU GPL, ensuring open accessibility and flexibility.
 
 ## Contributions
 
-Anyone is welcome to contribute.
+We welcome contributions from anyone interested in enhancing this plugin's functionality and features.
 
 ---
 
-Made with ❤ by [Vijay Hardaha](https://twitter.com/vijayhardaha)
+Crafted with ❤ by [Vijay Hardaha](https://twitter.com/vijayhardaha)

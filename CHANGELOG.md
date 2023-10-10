@@ -1,11 +1,11 @@
 # CHANGELOG
 
-## 1.0.1 - Dec 20, 2022
+## Version 1.0.1 - Dec 20, 2022
 
--   Add billing & shipping country as filter.
--   Minimize the main class code and move constants in root file.
--   Move WooCommerce plugin validation in root file.
+- Added billing and shipping country as filter options for enhanced reporting.
+- Reduced the size of the main class code for better code organization and moved constants to the root file for improved management.
+- Relocated WooCommerce plugin validation to the root file for streamlined functionality.
 
-## 1.0.0 - Sep 01, 2022
+## Version 1.0.0 - Sep 01, 2022
 
--   Initial release of the plugin.
+- Initial release, providing essential reporting features and capabilities.
