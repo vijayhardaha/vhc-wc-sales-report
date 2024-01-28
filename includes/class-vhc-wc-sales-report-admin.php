@@ -915,18 +915,36 @@ class VHC_WC_Sales_Report_Admin {
 			$suffix  = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			$version = VHC_WC_SALES_REPORT_VERSION;
 
+			// Array of styles to remove.
+			$styles_to_remove = array(
+				'woocommerce_admin',
+				'woocommerce_admin_styles',
+				'wp-dark-mode-admin',
+			);
+
+			// Loop through each style and deregister/dequeue it.
+			foreach ( $styles_to_remove as $style ) {
+				wp_deregister_style( $style );
+				wp_dequeue_style( $style );
+			}
+
 			// Enqueue styles.
-			wp_deregister_style( 'woocommerce_admin' );
-			wp_dequeue_style( 'woocommerce_admin' );
-			wp_deregister_style( 'woocommerce_admin_styles' );
-			wp_dequeue_style( 'woocommerce_admin_styles' );
 			wp_enqueue_style( 'vhc-wc-sales-report', vhc_wc_sales_report()->plugin_url() . '/assets/css/admin' . $suffix . '.css', array(), $version );
 
+			// Array of scripts to remove.
+			$scripts_to_remove = array(
+				'wc-enhanced-select',
+				'woo-variation-swatches-admin',
+				'select2',
+			);
+
+			// Loop through each script and deregister/dequeue it.
+			foreach ( $scripts_to_remove as $script ) {
+				wp_deregister_script( $script );
+				wp_dequeue_script( $script );
+			}
+
 			// Enqueue scripts.
-			wp_deregister_script( 'wc-enhanced-select' );
-			wp_dequeue_script( 'wc-enhanced-select' );
-			wp_deregister_script( 'woo-variation-swatches-admin' );
-			wp_dequeue_script( 'woo-variation-swatches-admin' );
 			wp_enqueue_script( 'vhc-wc-sales-report-select2', vhc_wc_sales_report()->plugin_url() . '/assets/js/select2' . $suffix . '.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker' ), $version, true );
 			wp_enqueue_script( 'vhc-wc-sales-report-enhancedselect', vhc_wc_sales_report()->plugin_url() . '/assets/js/enhancedselect' . $suffix . '.js', array( 'vhc-wc-sales-report-select2' ), $version, true );
 			wp_enqueue_script( 'vhc-wc-sales-report-datatable', vhc_wc_sales_report()->plugin_url() . '/assets/js/datatable' . $suffix . '.js', array( 'vhc-wc-sales-report-enhancedselect' ), $version, true );
