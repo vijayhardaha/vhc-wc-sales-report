@@ -3,7 +3,7 @@
  * Plugin Name: VHC WooCommerce Sales Report
  * Plugin URI: https://github.com/vijayhardaha/vhc-wc-sales-report
  * Description: Generates a custom product sales report during a specified time period with a filtering option.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Vijay Hardaha
  * Author URI: https://twitter.com/vijayhardaha/
  * License: GNU General Public License v2 or later
@@ -27,7 +27,7 @@ if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins',
 define( 'VHC_WC_SALES_REPORT_PLUGIN_FILE', __FILE__ );
 define( 'VHC_WC_SALES_REPORT_ABSPATH', dirname( VHC_WC_SALES_REPORT_PLUGIN_FILE ) . '/' );
 define( 'VHC_WC_SALES_REPORT_PLUGIN_BASENAME', plugin_basename( VHC_WC_SALES_REPORT_PLUGIN_FILE ) );
-define( 'VHC_WC_SALES_REPORT_VERSION', '1.0.0' );
+define( 'VHC_WC_SALES_REPORT_VERSION', '1.0.2' );
 
 // Include the main VHC_WC_Sales_Report class.
 if ( ! class_exists( 'VHC_WC_Sales_Report', false ) ) {

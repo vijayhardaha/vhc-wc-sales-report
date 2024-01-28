@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## Version 1.0.2 - Jan 20, 2023
+
+- Fix report conflicts from order combination plugin
+- Fix select2 UI conflicts on sales page
+- Enhance build release bash script
+- Enhance VSCode settings
+- Bump dependencies to latest version
+
 ## Version 1.0.1 - Dec 20, 2022
 
 - Added billing and shipping country as filter options for enhanced reporting.
