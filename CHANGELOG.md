@@ -1,12 +1,16 @@
 # CHANGELOG
 
+## Version 1.0.3 - Jan 20, 2023
+
+- Resolved a UI conflict related to the select2 component caused by the Chronopost plugin.
+
 ## Version 1.0.2 - Jan 20, 2023
 
-- Fix report conflicts from order combination plugin
-- Fix select2 UI conflicts on sales page
-- Enhance build release bash script
-- Enhance VSCode settings
-- Bump dependencies to latest version
+- Fix report conflicts from order combination plugin.
+- Fix select2 UI conflicts on sales page.
+- Enhance build release bash script.
+- Enhance VSCode settings.
+- Bump dependencies to latest version.
 
 ## Version 1.0.1 - Dec 20, 2022
 
