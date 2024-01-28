@@ -916,6 +916,8 @@ class VHC_WC_Sales_Report_Admin {
 			$version = VHC_WC_SALES_REPORT_VERSION;
 
 			// Enqueue styles.
+			wp_deregister_style( 'woocommerce_admin' );
+			wp_dequeue_style( 'woocommerce_admin' );
 			wp_deregister_style( 'woocommerce_admin_styles' );
 			wp_dequeue_style( 'woocommerce_admin_styles' );
 			wp_enqueue_style( 'vhc-wc-sales-report', vhc_wc_sales_report()->plugin_url() . '/assets/css/admin' . $suffix . '.css', array(), $version );
