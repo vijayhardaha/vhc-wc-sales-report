@@ -575,6 +575,9 @@ class VHC_WC_Sales_Report_Admin {
 		// Prevent plugins from overriding the order status filter.
 		add_filter( 'woocommerce_reports_order_statuses', array( $this, 'get_formatted_order_status' ), 9999 );
 
+		// Remove the action hook 'woocommerce_reports_get_order_report_query' and its associated function 'wuoc_reports_get_order_report_query'.
+		remove_action( 'woocommerce_reports_get_order_report_query', 'wuoc_reports_get_order_report_query' );
+
 		// Based on woocoommerce/includes/admin/reports/class-wc-report-sales-by-product.php.
 		$sold_products = $wc_report->get_order_report_data(
 			array(
@@ -914,7 +917,7 @@ class VHC_WC_Sales_Report_Admin {
 
 			// Enqueue styles.
 			wp_deregister_style( 'woocommerce_admin_styles' );
-            wp_dequeue_style( 'woocommerce_admin_styles' );
+			wp_dequeue_style( 'woocommerce_admin_styles' );
 			wp_enqueue_style( 'vhc-wc-sales-report', vhc_wc_sales_report()->plugin_url() . '/assets/css/admin' . $suffix . '.css', array(), $version );
 
 			// Enqueue scripts.
