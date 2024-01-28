@@ -913,10 +913,14 @@ class VHC_WC_Sales_Report_Admin {
 			$version = VHC_WC_SALES_REPORT_VERSION;
 
 			// Enqueue styles.
+			wp_deregister_style( 'woocommerce_admin_styles' );
+            wp_dequeue_style( 'woocommerce_admin_styles' );
 			wp_enqueue_style( 'vhc-wc-sales-report', vhc_wc_sales_report()->plugin_url() . '/assets/css/admin' . $suffix . '.css', array(), $version );
 
 			// Enqueue scripts.
+			wp_deregister_script( 'wc-enhanced-select' );
 			wp_dequeue_script( 'wc-enhanced-select' );
+			wp_deregister_script( 'woo-variation-swatches-admin' );
 			wp_dequeue_script( 'woo-variation-swatches-admin' );
 			wp_enqueue_script( 'vhc-wc-sales-report-select2', vhc_wc_sales_report()->plugin_url() . '/assets/js/select2' . $suffix . '.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker' ), $version, true );
 			wp_enqueue_script( 'vhc-wc-sales-report-enhancedselect', vhc_wc_sales_report()->plugin_url() . '/assets/js/enhancedselect' . $suffix . '.js', array( 'vhc-wc-sales-report-select2' ), $version, true );
