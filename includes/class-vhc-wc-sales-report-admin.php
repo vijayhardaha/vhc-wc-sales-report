@@ -43,8 +43,25 @@ class VHC_WC_Sales_Report_Admin {
 
 		// Download csv action.
 		add_action( 'admin_init', array( $this, 'download_report' ) );
+
+		// Add plugin action link.
+		add_filter( 'plugin_action_links_' . VHC_WC_SALES_REPORT_PLUGIN_BASENAME, array( $this, 'plugin_manage_link' ), 10, 4 );
 	}
 
+	/**
+	 * Return the plugin action links.
+	 *
+	 * @since 1.0.5
+	 * @param array $actions An array of actions.
+	 * @return array
+	 */
+	public function plugin_manage_link( $actions ) {
+		$url = add_query_arg( array( 'page' => $this->screen_id ), admin_url( 'admin.php' ) );
+
+		array_unshift( $actions, '<a href="' . esc_url( $url ) . '">' . esc_html__( 'View Report', 'vhc-wc-sales-report' ) . '</a>' );
+
+		return $actions;
+	}
 	/**
 	 * Valid screen ids for plugin scripts & styles
 	 *
