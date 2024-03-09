@@ -2,334 +2,340 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: VHC WooCommerce Sales Report 1.0.4\n"
+"Project-Id-Version: VHC WooCommerce Sales Report 1.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vhc-wc-sales-report\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-28T18:48:23+00:00\n"
+"POT-Creation-Date: 2024-03-09T08:03:21+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: vhc-wc-sales-report\n"
 
 #. Plugin Name of the plugin
+#: vhc-wc-sales-report.php
 msgid "VHC WooCommerce Sales Report"
 msgstr ""
 
 #. Plugin URI of the plugin
+#: vhc-wc-sales-report.php
 msgid "https://github.com/vijayhardaha/vhc-wc-sales-report"
 msgstr ""
 
 #. Description of the plugin
+#: vhc-wc-sales-report.php
 msgid "Generates a custom product sales report during a specified time period with a filtering option."
 msgstr ""
 
 #. Author of the plugin
+#: vhc-wc-sales-report.php
 msgid "Vijay Hardaha"
 msgstr ""
 
 #. Author URI of the plugin
+#: vhc-wc-sales-report.php
 msgid "https://twitter.com/vijayhardaha/"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:255
-#: includes/class-vhc-wc-sales-report-admin.php:1174
+#: includes/class-vhc-wc-sales-report-admin.php:61
+#: includes/class-vhc-wc-sales-report-admin.php:1239
+msgid "View Report"
+msgstr ""
+
+#: includes/class-vhc-wc-sales-report-admin.php:272
+#: includes/class-vhc-wc-sales-report-admin.php:1191
 msgid "Product ID"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:256
+#: includes/class-vhc-wc-sales-report-admin.php:273
 msgid "Product SKU"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:257
+#: includes/class-vhc-wc-sales-report-admin.php:274
 msgid "Product Name"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:258
+#: includes/class-vhc-wc-sales-report-admin.php:275
 msgid "Product Categories"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:259
-#: includes/class-vhc-wc-sales-report-admin.php:1175
+#: includes/class-vhc-wc-sales-report-admin.php:276
+#: includes/class-vhc-wc-sales-report-admin.php:1192
 msgid "Quantity Sold"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:260
-#: includes/class-vhc-wc-sales-report-admin.php:1176
+#: includes/class-vhc-wc-sales-report-admin.php:277
+#: includes/class-vhc-wc-sales-report-admin.php:1193
 msgid "Gross Sales"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:261
-#: includes/class-vhc-wc-sales-report-admin.php:1177
+#: includes/class-vhc-wc-sales-report-admin.php:278
+#: includes/class-vhc-wc-sales-report-admin.php:1194
 msgid "Gross Sales (After Discounts)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:275
+#: includes/class-vhc-wc-sales-report-admin.php:292
 msgid "Custom date range"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:276
+#: includes/class-vhc-wc-sales-report-admin.php:293
 msgid "Today orders"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:277
+#: includes/class-vhc-wc-sales-report-admin.php:294
 msgid "Yesterday orders"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:278
+#: includes/class-vhc-wc-sales-report-admin.php:295
 msgid "Last 3 days orders (excluding today)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:279
+#: includes/class-vhc-wc-sales-report-admin.php:296
 msgid "Last 7 days orders (excluding today)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:280
+#: includes/class-vhc-wc-sales-report-admin.php:297
 msgid "Last 14 days orders (excluding today)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:281
+#: includes/class-vhc-wc-sales-report-admin.php:298
 msgid "Last 30 days orders (excluding today)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:282
+#: includes/class-vhc-wc-sales-report-admin.php:299
 msgid "This month orders (including today)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:283
+#: includes/class-vhc-wc-sales-report-admin.php:300
 msgid "Last month orders"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:284
+#: includes/class-vhc-wc-sales-report-admin.php:301
 msgid "Last 3 months orders (excluding current month)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:285
+#: includes/class-vhc-wc-sales-report-admin.php:302
 msgid "Last 6 months orders (excluding current month)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:286
+#: includes/class-vhc-wc-sales-report-admin.php:303
 msgid "Last 12 months orders (excluding current month)"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:287
+#: includes/class-vhc-wc-sales-report-admin.php:304
 msgid "This year orders"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:288
+#: includes/class-vhc-wc-sales-report-admin.php:305
 msgid "Last year orders"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:289
+#: includes/class-vhc-wc-sales-report-admin.php:306
 msgid "All time"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:958
+#: includes/class-vhc-wc-sales-report-admin.php:975
 msgctxt "enhanced select"
 msgid "No matches found"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:959
+#: includes/class-vhc-wc-sales-report-admin.php:976
 msgctxt "enhanced select"
 msgid "Loading failed"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:960
+#: includes/class-vhc-wc-sales-report-admin.php:977
 msgctxt "enhanced select"
 msgid "Please enter 1 or more characters"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:961
+#: includes/class-vhc-wc-sales-report-admin.php:978
 msgctxt "enhanced select"
 msgid "Please enter %qty% or more characters"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:962
+#: includes/class-vhc-wc-sales-report-admin.php:979
 msgctxt "enhanced select"
 msgid "Please delete 1 character"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:963
+#: includes/class-vhc-wc-sales-report-admin.php:980
 msgctxt "enhanced select"
 msgid "Please delete %qty% characters"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:964
+#: includes/class-vhc-wc-sales-report-admin.php:981
 msgctxt "enhanced select"
 msgid "You can only select 1 item"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:965
+#: includes/class-vhc-wc-sales-report-admin.php:982
 msgctxt "enhanced select"
 msgid "You can only select %qty% items"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:966
+#: includes/class-vhc-wc-sales-report-admin.php:983
 msgctxt "enhanced select"
 msgid "Loading more results&hellip;"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:967
+#: includes/class-vhc-wc-sales-report-admin.php:984
 msgctxt "enhanced select"
 msgid "Searching&hellip;"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:977
+#: includes/class-vhc-wc-sales-report-admin.php:994
 msgid "Please wait, Generating report&hellip;"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:978
+#: includes/class-vhc-wc-sales-report-admin.php:995
 msgid "Please wait, Generating csv file&hellip;"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:979
+#: includes/class-vhc-wc-sales-report-admin.php:996
 msgid "Report file downloaded successfully."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:980
+#: includes/class-vhc-wc-sales-report-admin.php:997
 msgid "Sorry, something went wrong, please try again or reload the page."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:993
-#: includes/class-vhc-wc-sales-report-admin.php:1005
+#: includes/class-vhc-wc-sales-report-admin.php:1010
+#: includes/class-vhc-wc-sales-report-admin.php:1022
 msgid "WooCommerce Sales Report"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:993
+#: includes/class-vhc-wc-sales-report-admin.php:1010
 msgid "Sales Report"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1019
+#: includes/class-vhc-wc-sales-report-admin.php:1036
 msgid "Report period"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1020
+#: includes/class-vhc-wc-sales-report-admin.php:1037
 msgid "Choose the report orders period."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1029
+#: includes/class-vhc-wc-sales-report-admin.php:1046
 msgid "Date range"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1034
+#: includes/class-vhc-wc-sales-report-admin.php:1051
 msgid "Start date"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1038
+#: includes/class-vhc-wc-sales-report-admin.php:1055
 msgid "End date"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1042
+#: includes/class-vhc-wc-sales-report-admin.php:1059
 msgid "Choose the custom date range for the report orders period."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1051
+#: includes/class-vhc-wc-sales-report-admin.php:1068
 msgid "Order status"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1052
+#: includes/class-vhc-wc-sales-report-admin.php:1069
 msgid "Choose the order statuses to be included in report."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1063
+#: includes/class-vhc-wc-sales-report-admin.php:1080
 msgid "Billing country"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1064
+#: includes/class-vhc-wc-sales-report-admin.php:1081
 msgid "Choose the billing country from which order products to be included in report."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1075
+#: includes/class-vhc-wc-sales-report-admin.php:1092
 msgid "Shipping country"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1076
+#: includes/class-vhc-wc-sales-report-admin.php:1093
 msgid "Choose the shipping country from which order products to be included in report."
 msgstr ""
 
 #. translators: %s Taxonomy name
-#: includes/class-vhc-wc-sales-report-admin.php:1093
+#: includes/class-vhc-wc-sales-report-admin.php:1110
 msgid "Filter by %s"
 msgstr ""
 
 #. translators: %s Taxonomy name
-#: includes/class-vhc-wc-sales-report-admin.php:1094
+#: includes/class-vhc-wc-sales-report-admin.php:1111
 msgid "Choose the %s to be used to filter the report."
 msgstr ""
 
 #. translators: %s Taxonomy singular name
-#: includes/class-vhc-wc-sales-report-admin.php:1099
+#: includes/class-vhc-wc-sales-report-admin.php:1116
 msgid "Search for a %s&hellip;"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1114
+#: includes/class-vhc-wc-sales-report-admin.php:1131
 msgid "Include products"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1115
+#: includes/class-vhc-wc-sales-report-admin.php:1132
 msgid "Choose the products to be included in the report."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1120
 #: includes/class-vhc-wc-sales-report-admin.php:1137
+#: includes/class-vhc-wc-sales-report-admin.php:1154
 msgid "Search for a product&hellip;"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1131
+#: includes/class-vhc-wc-sales-report-admin.php:1148
 msgid "Exclude products"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1132
+#: includes/class-vhc-wc-sales-report-admin.php:1149
 msgid "Choose the products to be excluded from the report."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1147
+#: includes/class-vhc-wc-sales-report-admin.php:1164
 msgid "Exclude free products"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1148
+#: includes/class-vhc-wc-sales-report-admin.php:1165
 msgid "Choose if free products should be included or excluded."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1151
+#: includes/class-vhc-wc-sales-report-admin.php:1168
 msgid "Yes"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1152
+#: includes/class-vhc-wc-sales-report-admin.php:1169
 msgid "No"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1162
+#: includes/class-vhc-wc-sales-report-admin.php:1179
 msgid "Sort by"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1191
+#: includes/class-vhc-wc-sales-report-admin.php:1208
 msgid "Ascending"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1192
+#: includes/class-vhc-wc-sales-report-admin.php:1209
 msgid "Descending"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1199
+#: includes/class-vhc-wc-sales-report-admin.php:1216
 msgid "Choose the report order field & order type."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1210
+#: includes/class-vhc-wc-sales-report-admin.php:1227
 msgid "Report fields"
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1211
+#: includes/class-vhc-wc-sales-report-admin.php:1228
 msgid "Choose the fields to be displayed in the report."
 msgstr ""
 
-#: includes/class-vhc-wc-sales-report-admin.php:1222
-msgid "View Report"
-msgstr ""
-
-#: includes/class-vhc-wc-sales-report-admin.php:1223
+#: includes/class-vhc-wc-sales-report-admin.php:1240
 msgid "Download Report"
 msgstr ""
 

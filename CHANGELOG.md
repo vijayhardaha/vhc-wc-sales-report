@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 1.0.5 - Mar 08, 2024
+
+- Add view report link in plugin actions.
+- Bump dependencies to the latest versions.
+- Write license name in valid SPDX expression.
+
 ## Version 1.0.4 - Jan 20, 2023
 
 - Resolved a UI conflict related to the select2 component caused by the WP Dark Mode plugin.
